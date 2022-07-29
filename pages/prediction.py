@@ -20,28 +20,33 @@ layout = html.Div([
                 html.Img(id="penguin-image")
             ]),
             html.Div(className="sliders-container", children=[
-                html.P(className="label", children="Longitud del Pico (mm)"),
+                html.P(id="culmen_length", className="label",
+                       children="Longitud del Pico (mm)"),
                 html.Div(className="range-wrapper", children=[
                     html.Span(className="tag", children="30"),
-                    dcc.Input(className="", type="range", min="30", max="60"),
+                    dcc.Input(id="culmen_length_input",
+                              type="range", min="30", max="60", value=45),
                     html.Span(className="tag", children="60")
                 ]),
 
-                html.P(className="label", children="Profundidad del Pico (mm)"),
+                html.P(id="culmen_depth", className="label",
+                       children="Profundidad del Pico (mm)"),
                 html.Div(className="range-wrapper", children=[
                     html.Span(className="tag", children="15"),
                     dcc.Input(type="range", min="15", max="30"),
                     html.Span(className="tag", children="30")
                 ]),
 
-                html.P(className="label", children="Longitud de las Aletas (mm)"),
+                html.P(id="flipper_length", className="label",
+                       children="Longitud de las Aletas (mm)"),
                 html.Div(className="range-wrapper", children=[
                     html.Span(className="tag", children="170"),
                     dcc.Input(type="range", min="170", max="220"),
                     html.Span(className="tag", children="220")
                 ]),
 
-                html.P(className="label", children="Masa corporal (kg)"),
+                html.P(id="body_mass", className="label",
+                       children="Masa corporal (kg)"),
                 html.Div(className="range-wrapper", children=[
                     html.Span(className="tag", children="2.5"),
                     dcc.Input(type="range", min="2.5", max="5"),
@@ -50,7 +55,7 @@ layout = html.Div([
 
 
 
-                dcc.RadioItems(className="gender", options=[
+                dcc.RadioItems(id="gender_test", className="gender", options=[
                     {"label": html.I(className="fa-solid fa-venus"),
                      "value": "female"},
                     {"label": html.I(className="fa-solid fa-mars"),

@@ -20,7 +20,7 @@
 }
 
 .prediction .penguin-container #penguin-image {
-  background-color: red;
+  background-color: green;
   width: 90%;
   height: 90%;
 }
@@ -44,6 +44,7 @@
 
 .prediction .sliders-container .label {
   margin: 30px 0 10px;
+  font-weight: bold;
   width: 80%;
 }
 
@@ -65,5 +66,9 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.prediction .sliders-container .gender input {
+  display: none;
 }
 /*# sourceMappingURL=prediction.css.map */

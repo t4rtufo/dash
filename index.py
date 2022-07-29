@@ -18,7 +18,7 @@ app = dash.Dash(__name__,
                         'crossorigin': 'anonymous',
 
                     }
-                ])
+                ], suppress_callback_exceptions=True)
 
 # Define the index page layout
 app.layout = html.Div([
@@ -39,6 +39,13 @@ def display_page(pathname):
         return prediction.layout
     else:  # if redirected to unknown link
         return "404 Page Error! Please choose a link"
+
+# Predictor
+
+
+@app.callback(Output('culmen_length', 'children'), [Input('culmen_length_input', 'value')])
+def update_value(value):
+    return f"Longitud del Pico (mm) {round(float(value), 2)}"
 
 
 # Run the app on localhost:8050
