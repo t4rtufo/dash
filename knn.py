@@ -1,12 +1,9 @@
 import pandas as pd
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import classification_report, confusion_matrix
+
 
 # Recolección
 df = pd.read_csv("penguins_size.csv")
@@ -29,15 +26,14 @@ x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.35)
 knn = KNeighborsClassifier(n_neighbors=3)
 
 knn.fit(x_train, y_train)
-out1 = knn.predict(x_test)
 
 
 def prediction(penguin):
-    scaled_penguin = scale.transform([penguin])
+    scaled_penguin = scale.transform(
+        pd.DataFrame([penguin], columns=df.columns[1:]))
     transformed_penguin = pd.DataFrame(scaled_penguin, columns=df.columns[1:])
-
     species = knn.predict(transformed_penguin)
     return species[0]
 
 
-print(prediction([46.3,15.8,215,5050,0,1,0,0]))
+print(prediction([46.3, 15.8, 215, 5050, 0, 1, 0, 0]))

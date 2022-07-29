@@ -17,7 +17,8 @@ layout = html.Div([
         className="prediction",
         children=[
             html.Div(className="penguin-container", children=[
-                html.Img(id="penguin-image")
+                html.Img(src="../assets/img/default.png", id="penguin-image"),
+                html.P(id="penguin-title", children="Nuevo Pingüino")
             ]),
             html.Div(className="sliders-container", children=[
                 html.P(id="culmen_length", className="label",
@@ -73,7 +74,8 @@ layout = html.Div([
                      "value": "biscoe"}],
                     value="torgersen"),
 
-                html.Button(id="predict-button", children="Predecir especie")
+                html.Button(type="button", id="predict-button", n_clicks=0,
+                            children="Predecir especie")
             ])
         ]
     )

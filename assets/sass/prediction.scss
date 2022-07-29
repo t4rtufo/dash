@@ -5,7 +5,8 @@
 
   .penguin-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     align-items: center;
     width: 40%;
 
@@ -13,6 +14,11 @@
       background-color: green;
       width: 90%;
       height: 90%;
+    }
+    #penguin-title {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: bold;
     }
   }
   .sliders-container {
