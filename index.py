@@ -9,6 +9,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
+# from sklearn.metrics import classification_report,confusion_matrix
 
 # Connect to your app pages
 from pages import prediction, dashboard, router
@@ -30,11 +31,12 @@ df_scaled = pd.DataFrame(transformed, columns=df.columns[1:])
 X = df_scaled
 y = df['species']
 
-x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.35)
+x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
 
 knn = KNeighborsClassifier(n_neighbors=3)
 
 knn.fit(x_train, y_train)
+out1 = knn.predict(x_test)
 
 
 def predict(penguin):
@@ -79,8 +81,6 @@ def display_page(pathname):
         return "404 Page Error! Please choose a link"
 
 # Predictor sliders
-
-
 @app.callback(Output('culmen_length', 'children'), [Input('culmen_length_input', 'value')])
 def update_value(value):
     return f"Longitud del Pico ({round(float(value), 2)}mm)"
@@ -101,8 +101,6 @@ def update_value(value):
     return f"Masa corporal ({round(float(value), 2)}kg)"
 
 # Predictor radio
-
-
 @app.callback(Output('female-label', 'className'), [Input('gender_radio', 'value')])
 def update_options(value):
     return "female-label female-label-active" if(value == "female") else "female-label"
@@ -126,7 +124,6 @@ def update_options(value):
 @app.callback(Output('biscoe-label', 'className'), [Input('island_radio', 'value')])
 def update_options(value):
     return "biscoe-label biscoe-label-active" if(value == "biscoe") else "biscoe-label"
-# [46.3,15.8,215,5050,0,1,0,0]
 
 
 @app.callback([Output('penguin-image', 'src'), Output('penguin-title', 'children')], [
@@ -139,8 +136,11 @@ def update_options(value):
     Input('predict-button', 'n_clicks')
 ])
 def update_penguin(culmen_length, culmen_depth, flipper, mass, gender, island, n_clicks):
+    if(n_clicks == 0):
+        return "../assets/img/default.png", "Nuevo Pingüino"
+
     new_penguin = [float(culmen_length), float(
-        culmen_depth), float(flipper), float(mass)]
+        culmen_depth), float(flipper), float(mass)*1000]
 
     if(gender == "female"):
         new_penguin.extend([1, 0])
@@ -155,7 +155,6 @@ def update_penguin(culmen_length, culmen_depth, flipper, mass, gender, island, n
         new_penguin.extend([0, 0])
 
     species = predict(new_penguin)
-
     return f"../assets/img/{species}.png", species
 
 

@@ -53,8 +53,8 @@ layout = html.Div([
                 html.Div(className="range-wrapper", children=[
                     html.Span(className="tag", children="2.5"),
                     dcc.Input(id="body_mass_input", type="range",
-                              min="2.5", max="5", value=3),
-                    html.Span(className="tag", children="5")
+                              min="2.5", max="6.5", value=3),
+                    html.Span(className="tag", children="6.5")
                 ]),
 
 

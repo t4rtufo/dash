@@ -22,9 +22,10 @@
 }
 
 .prediction .penguin-container #penguin-image {
-  background-color: green;
   width: 90%;
   height: 90%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .prediction .penguin-container #penguin-title {
