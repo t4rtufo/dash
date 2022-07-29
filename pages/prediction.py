@@ -1,16 +1,5 @@
-import dash
 from dash import html
 from dash import dcc
-from dash.dependencies import Input, Output
-
-
-import pandas as pd
-
-import plotly.graph_objects as go
-import plotly.express as px
-
-
-df = pd.read_csv("penguins_size.csv")
 
 layout = html.Div([
     html.Div(
@@ -57,14 +46,14 @@ layout = html.Div([
                     html.Span(className="tag", children="6.5")
                 ]),
 
-
-
+                html.P(className="label", children="Sexo"),
                 dcc.RadioItems(id="gender_radio", className="gender", options=[
                     {"label": html.Span(id="female-label", className="female-label", children=html.I(className="fa-solid fa-venus")),
                      "value": "female"},
                     {"label": html.Span(id="male-label", className="male-label", children=html.I(className="fa-solid fa-mars")),
                      "value": "male"}], value="female"),
 
+                html.P(className="label", children="Isla de procedencia"),
                 dcc.RadioItems(id="island_radio", className="island", options=[
                     {"label": html.Span(id="torgersen-label", className="torgersen-label", children="Torgersen"),
                      "value": "torgersen"},

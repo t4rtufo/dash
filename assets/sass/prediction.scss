@@ -6,6 +6,7 @@
   .penguin-container {
     display: flex;
     flex-direction: column;
+    row-gap: 20px;
     align-items: center;
     align-items: center;
     width: 40%;
@@ -29,7 +30,7 @@
     width: 60%;
 
     .label {
-      margin: 30px 0 10px;
+      margin: 20px 0 10px;
       font-weight: bold;
       width: 80%;
     }
@@ -46,10 +47,14 @@
       }
     }
     .gender {
-      margin: 50px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
       .female-label,
       .male-label {
-        padding: 20px 50px;
+        height: 100%;
+        padding: 0 50px;
         color: #76a3fc;
         font-size: 3rem;
         cursor: pointer;
@@ -78,11 +83,15 @@
     }
 
     .island {
-      margin: 50px 0 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
       .torgersen-label,
       .dream-label,
       .biscoe-label {
-        padding: 20px 50px;
+        height: 100%;
+        padding: 0 50px;
         color: #76a3fc;
         font-size: 3rem;
         cursor: pointer;
@@ -119,7 +128,7 @@
       }
     }
     #predict-button {
-      margin: 40px;
+      margin: 20px;
       text-align: center;
       padding: 15px 30px;
       border-radius: 32px;

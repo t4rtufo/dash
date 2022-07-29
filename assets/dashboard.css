@@ -1,0 +1,30 @@
+.dashboard {
+  display: -ms-grid;
+  display: grid;
+  padding: 15px 40px;
+  gap: 15px;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: repeat(3, 1fr);
+  height: 100vh;
+  font-size: 2rem;
+  background: #eeeeee;
+}
+
+.dashboard .graph {
+  background-color: white;
+  border-radius: 16px;
+}
+
+.dashboard .graph-md {
+  grid-column: span 2 / auto;
+}
+
+.dashboard .graph-lg {
+  grid-column: span 3 / auto;
+}
+
+.dashboard .graph-xl {
+  grid-column: span 4 / auto;
+}
+/*# sourceMappingURL=dashboard.css.map */

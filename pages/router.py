@@ -1,7 +1,4 @@
-import dash
-
 from dash import html
-
 
 layout = html.Div(className="router", children=[
     html.H1(className="title", children="Archipiélago Palmer (Antártida)"),

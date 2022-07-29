@@ -14,6 +14,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  row-gap: 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -52,7 +53,7 @@
 }
 
 .prediction .sliders-container .label {
-  margin: 30px 0 10px;
+  margin: 20px 0 10px;
   font-weight: bold;
   width: 80%;
 }
@@ -78,12 +79,22 @@
 }
 
 .prediction .sliders-container .gender {
-  margin: 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
 }
 
 .prediction .sliders-container .gender .female-label,
 .prediction .sliders-container .gender .male-label {
-  padding: 20px 50px;
+  height: 100%;
+  padding: 0 50px;
   color: #76a3fc;
   font-size: 3rem;
   cursor: pointer;
@@ -116,13 +127,23 @@
 }
 
 .prediction .sliders-container .island {
-  margin: 50px 0 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
 }
 
 .prediction .sliders-container .island .torgersen-label,
 .prediction .sliders-container .island .dream-label,
 .prediction .sliders-container .island .biscoe-label {
-  padding: 20px 50px;
+  height: 100%;
+  padding: 0 50px;
   color: #76a3fc;
   font-size: 3rem;
   cursor: pointer;
@@ -166,7 +187,7 @@
 }
 
 .prediction .sliders-container #predict-button {
-  margin: 40px;
+  margin: 20px;
   text-align: center;
   padding: 15px 30px;
   border-radius: 32px;

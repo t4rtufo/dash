@@ -11,14 +11,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 # from sklearn.metrics import classification_report,confusion_matrix
 
-# Connect to your app pages
 from pages import prediction, dashboard, router
 
 # KNN prediction
 # Recolección
-df = pd.read_csv("penguins_size.csv")
+df = pd.read_csv("./data/penguins_size.csv")
 
 # Procesamiento
+df["sex"] = df['sex'].fillna(df['sex'].mode()[0])
 df = pd.get_dummies(df, columns=['sex', 'island'], drop_first=True)
 df.iloc[:, 1:5] = df.iloc[:, 1:5].fillna(df.iloc[:, 1:5].mean())
 
@@ -81,6 +81,8 @@ def display_page(pathname):
         return "404 Page Error! Please choose a link"
 
 # Predictor sliders
+
+
 @app.callback(Output('culmen_length', 'children'), [Input('culmen_length_input', 'value')])
 def update_value(value):
     return f"Longitud del Pico ({round(float(value), 2)}mm)"
@@ -101,6 +103,8 @@ def update_value(value):
     return f"Masa corporal ({round(float(value), 2)}kg)"
 
 # Predictor radio
+
+
 @app.callback(Output('female-label', 'className'), [Input('gender_radio', 'value')])
 def update_options(value):
     return "female-label female-label-active" if(value == "female") else "female-label"
