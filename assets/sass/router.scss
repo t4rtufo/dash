@@ -1,0 +1,54 @@
+.router {
+  background: linear-gradient(-45deg, #aec7fe, #76a3fc);
+
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 300px;
+    font-size: 5rem;
+    color: white;
+  }
+  .pages-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    height: calc(100vh - 300px);
+    font-size: 20px;
+
+    .page-card {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      padding: 40px;
+      background-color: #e7eeff;
+      border-radius: 16px;
+      box-shadow: 4px 4px 16px -4px rgba(0, 0, 0, 0.55);
+      transition: transform 0.4s;
+      &:hover {
+        transform: scale(1.1);
+      }
+      .page-image {
+        padding: 30px;
+        background-color: white;
+        width: 240px;
+        border-radius: 25%;
+      }
+      .page-link {
+        text-align: center;
+        padding: 15px 0;
+        border-radius: 32px;
+        background-color: #76a3fc;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        &:hover {
+          background-color: darken(#76a3fc, 10);
+          transition: background-color 0.2s;
+        }
+      }
+    }
+  }
+}

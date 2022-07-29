@@ -1,0 +1,45 @@
+.prediction {
+  display: flex;
+  height: 100vh;
+  font-size: 2rem;
+
+  .penguin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+
+    #penguin-image {
+      background-color: red;
+      width: 90%;
+      height: 90%;
+    }
+  }
+  .sliders-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+
+    .label {
+      margin: 30px 0 10px;
+      width: 80%;
+    }
+    .range-wrapper {
+      display: flex;
+      align-items: center;
+      width: 80%;
+
+      .tag {
+        margin: 0 10px;
+      }
+      input {
+        flex: 1;
+      }
+    }
+    .gender{
+      
+    }
+  }
+}
