@@ -30,10 +30,11 @@ layout = html.Div([
                 ]),
 
                 html.P(id="culmen_depth", className="label",
-                       children="Profundidad del Pico (mm)"),
+                       children="Ancho del Pico (mm)"),
                 html.Div(className="range-wrapper", children=[
                     html.Span(className="tag", children="15"),
-                    dcc.Input(type="range", min="15", max="30"),
+                    dcc.Input(id="culmen_depth_input", type="range",
+                              min="15", max="30", value=20),
                     html.Span(className="tag", children="30")
                 ]),
 
@@ -41,7 +42,8 @@ layout = html.Div([
                        children="Longitud de las Aletas (mm)"),
                 html.Div(className="range-wrapper", children=[
                     html.Span(className="tag", children="170"),
-                    dcc.Input(type="range", min="170", max="220"),
+                    dcc.Input(id="flipper_length_input", type="range",
+                              min="170", max="220", value=195),
                     html.Span(className="tag", children="220")
                 ]),
 
@@ -49,22 +51,28 @@ layout = html.Div([
                        children="Masa corporal (kg)"),
                 html.Div(className="range-wrapper", children=[
                     html.Span(className="tag", children="2.5"),
-                    dcc.Input(type="range", min="2.5", max="5"),
+                    dcc.Input(id="body_mass_input", type="range",
+                              min="2.5", max="5", value=3),
                     html.Span(className="tag", children="5")
                 ]),
 
 
 
-                dcc.RadioItems(id="gender_test", className="gender", options=[
-                    {"label": html.I(className="fa-solid fa-venus"),
+                dcc.RadioItems(id="gender_radio", className="gender", options=[
+                    {"label": html.Span(id="female-label", className="female-label", children=html.I(className="fa-solid fa-venus")),
                      "value": "female"},
-                    {"label": html.I(className="fa-solid fa-mars"),
+                    {"label": html.Span(id="male-label", className="male-label", children=html.I(className="fa-solid fa-mars")),
                      "value": "male"}], value="female"),
-                dcc.RadioItems(className="island", options=[
-                    {"label": "Torgersen", "value": "torgersen"},
-                    {"label": "Dream", "value": "dream"},
-                    {"label": "Biscoe", "value": "biscoe"}],
+
+                dcc.RadioItems(id="island_radio", className="island", options=[
+                    {"label": html.Span(id="torgersen-label", className="torgersen-label", children="Torgersen"),
+                     "value": "torgersen"},
+                    {"label": html.Span(id="dream-label", className="dream-label", children="Dream"),
+                     "value": "dream"},
+                    {"label": html.Span(id="biscoe-label", className="biscoe-label", children="Biscoe"),
+                     "value": "biscoe"}],
                     value="torgersen"),
+
                 html.Button(id="predict-button", children="Predecir especie")
             ])
         ]

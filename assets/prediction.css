@@ -68,7 +68,111 @@
           flex: 1;
 }
 
+.prediction .sliders-container .gender {
+  margin: 50px 0;
+}
+
+.prediction .sliders-container .gender .female-label,
+.prediction .sliders-container .gender .male-label {
+  padding: 20px 50px;
+  color: #76a3fc;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.prediction .sliders-container .gender .female-label {
+  border: solid 4px #76a3fc;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+}
+
+.prediction .sliders-container .gender .female-label-active {
+  background-color: #76a3fc;
+  color: white;
+}
+
+.prediction .sliders-container .gender .male-label {
+  border: solid 4px #76a3fc;
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+}
+
+.prediction .sliders-container .gender .male-label-active {
+  background-color: #76a3fc;
+  color: white;
+}
+
 .prediction .sliders-container .gender input {
   display: none;
+}
+
+.prediction .sliders-container .island {
+  margin: 50px 0 30px;
+}
+
+.prediction .sliders-container .island .torgersen-label,
+.prediction .sliders-container .island .dream-label,
+.prediction .sliders-container .island .biscoe-label {
+  padding: 20px 50px;
+  color: #76a3fc;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.prediction .sliders-container .island .torgersen-label {
+  border: solid 4px #76a3fc;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+}
+
+.prediction .sliders-container .island .torgersen-label-active {
+  background-color: #76a3fc;
+  color: white;
+}
+
+.prediction .sliders-container .island .dream-label {
+  border: solid 4px #76a3fc;
+  border-left: none;
+  border-right: none;
+}
+
+.prediction .sliders-container .island .dream-label-active {
+  background-color: #76a3fc;
+  color: white;
+}
+
+.prediction .sliders-container .island .biscoe-label {
+  border: solid 4px #76a3fc;
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+}
+
+.prediction .sliders-container .island .biscoe-label-active {
+  background-color: #76a3fc;
+  color: white;
+}
+
+.prediction .sliders-container .island input {
+  display: none;
+}
+
+.prediction .sliders-container #predict-button {
+  margin: 40px;
+  text-align: center;
+  padding: 15px 30px;
+  border-radius: 32px;
+  background-color: #76a3fc;
+  font-weight: bold;
+  font-size: 3rem;
+  border: none;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.prediction .sliders-container #predict-button:hover {
+  background-color: #4481fb;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 /*# sourceMappingURL=prediction.css.map */

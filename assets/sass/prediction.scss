@@ -40,8 +40,93 @@
       }
     }
     .gender {
+      margin: 50px 0;
+      .female-label,
+      .male-label {
+        padding: 20px 50px;
+        color: #76a3fc;
+        font-size: 3rem;
+        cursor: pointer;
+      }
+      .female-label {
+        border: solid 4px #76a3fc;
+        border-right: none;
+        border-radius: 8px 0 0 8px;
+        &-active {
+          background-color: #76a3fc;
+          color: white;
+        }
+      }
+      .male-label {
+        border: solid 4px #76a3fc;
+        border-left: none;
+        border-radius: 0 8px 8px 0;
+        &-active {
+          background-color: #76a3fc;
+          color: white;
+        }
+      }
       input {
         display: none;
+      }
+    }
+
+    .island {
+      margin: 50px 0 30px;
+      .torgersen-label,
+      .dream-label,
+      .biscoe-label {
+        padding: 20px 50px;
+        color: #76a3fc;
+        font-size: 3rem;
+        cursor: pointer;
+      }
+      .torgersen-label {
+        border: solid 4px #76a3fc;
+        border-right: none;
+        border-radius: 8px 0 0 8px;
+        &-active {
+          background-color: #76a3fc;
+          color: white;
+        }
+      }
+      .dream-label {
+        border: solid 4px #76a3fc;
+        border-left: none;
+        border-right: none;
+        &-active {
+          background-color: #76a3fc;
+          color: white;
+        }
+      }
+      .biscoe-label {
+        border: solid 4px #76a3fc;
+        border-left: none;
+        border-radius: 0 8px 8px 0;
+        &-active {
+          background-color: #76a3fc;
+          color: white;
+        }
+      }
+      input {
+        display: none;
+      }
+    }
+    #predict-button {
+      margin: 40px;
+      text-align: center;
+      padding: 15px 30px;
+      border-radius: 32px;
+      background-color: #76a3fc;
+      font-weight: bold;
+      font-size: 3rem;
+      border: none;
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        background-color: darken(#76a3fc, 10);
+        transition: background-color 0.2s;
       }
     }
   }
