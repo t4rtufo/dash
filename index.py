@@ -3,6 +3,7 @@ import dash
 from dash import html
 from dash import html, dcc
 from dash.dependencies import Input, Output, State
+import plotly.express as px
 
 import pandas as pd
 
@@ -46,6 +47,12 @@ def predict(penguin):
 
     return species[0]
 
+
+penguins = pd.read_csv("./data/penguins_size.csv")
+penguins["sex"] = penguins['sex'].fillna(penguins['sex'].mode()[0])
+penguins.iloc[:, 2:6] = penguins.iloc[:, 2:6].fillna(
+    penguins.iloc[:, 2:6].mean())
+penguins["id"] = penguins.index + 1
 
 app = dash.Dash(__name__,
 
@@ -161,6 +168,26 @@ def update_penguin(culmen_length, culmen_depth, flipper, mass, gender, island, n
     return f"../assets/img/{species}.png", species
 
 # Dashboard
+
+
+@app.callback(Output('scatter-graph', 'figure'), [
+    Input('dropdown-x', 'value'),
+    Input('dropdown-y', 'value')
+])
+def update_scatter(x_value, y_value):
+    return px.scatter(
+        penguins, x=x_value, y=y_value, color="species",
+        color_discrete_sequence=["orange", "purple", "green"],)
+
+
+@app.callback(Output('lines-graph', 'figure'), [
+    Input('dropdown-line', 'value')
+])
+def update_graph(value):
+    return px.line(
+        penguins, x="id", y=value, color="species",
+        title=f"{value} según especie",
+        color_discrete_sequence=["orange", "purple", "green"])
 
 
 # Run the app on localhost:8050

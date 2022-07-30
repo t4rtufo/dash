@@ -1,70 +1,42 @@
 .router {
   background: linear-gradient(-45deg, #aec7fe, #76a3fc);
 }
-
 .router .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   height: 220px;
   font-size: 5rem;
   color: white;
 }
-
 .router .pages-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   gap: 45px;
   height: calc(100vh - 220px);
   font-size: 20px;
 }
-
 .router .pages-container .page-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   row-gap: 10px;
   padding: 40px;
   background-color: #e7eeff;
   border-radius: 16px;
-  -webkit-box-shadow: 4px 4px 16px -4px rgba(0, 0, 0, 0.55);
-          box-shadow: 4px 4px 16px -4px rgba(0, 0, 0, 0.55);
-  -webkit-transition: -webkit-transform 0.4s;
-  transition: -webkit-transform 0.4s;
+  box-shadow: 4px 4px 16px -4px rgba(0, 0, 0, 0.55);
   transition: transform 0.4s;
-  transition: transform 0.4s, -webkit-transform 0.4s;
 }
-
 .router .pages-container .page-card:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
-
 .router .pages-container .page-card .page-image {
   padding: 30px;
   background-color: white;
   width: 240px;
   border-radius: 25%;
 }
-
 .router .pages-container .page-card .page-link {
   text-align: center;
   padding: 15px 0;
@@ -74,10 +46,7 @@
   text-decoration: none;
   color: white;
 }
-
 .router .pages-container .page-card .page-link:hover {
   background-color: #4481fb;
-  -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
-}
-/*# sourceMappingURL=router.css.map */
+}/*# sourceMappingURL=router.css.map */

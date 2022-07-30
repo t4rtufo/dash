@@ -1,10 +1,10 @@
+from calendar import c
 import dash
 from dash import html
 from dash import dcc
+import plotly.express as px
+
 import dash_daq as daq
-
-from dash.dependencies import Input, Output
-
 
 import pandas as pd
 
@@ -15,6 +15,7 @@ penguins = pd.read_csv("./data/penguins_size.csv")
 penguins["sex"] = penguins['sex'].fillna(penguins['sex'].mode()[0])
 penguins.iloc[:, 2:6] = penguins.iloc[:, 2:6].fillna(
     penguins.iloc[:, 2:6].mean())
+penguins["id"] = penguins.index + 1
 
 gentoo_ratio = round(penguins[penguins["species"]
                               == "Gentoo"].size * 100 / penguins.size, 2)
@@ -27,7 +28,7 @@ adelie_ratio = round(penguins[penguins["species"]
 
 layout = html.Div(className="dashboard", children=[
     html.Div(className="graph penguins-amount graph-lg", children=[
-        html.P(className="number", children=penguins.size),
+        html.P(className="number", children=len(penguins)),
         html.P(className="title", children="Pingüinos registrados")
     ]),
     html.Div(className="graph species-graph",
@@ -64,9 +65,53 @@ layout = html.Div(className="dashboard", children=[
             }
         }
     )),
-    html.Div(className="graph graph-xl",children=dcc.Graph(
-        
-    )),
-    html.Div(className="graph graph-xl"),
-    html.Div(className="graph graph-md")
+    html.Div(className="graph graph-xl scatter-graph",
+             children=[dcc.Graph(id="scatter-graph",
+                                 figure=px.scatter(
+                                     penguins, x="culmen_length_mm", y="culmen_depth_mm", color="species",
+                                     color_discrete_sequence=["orange", "purple", "green"])
+                                 ),
+                       html.Div(className="dropdowns-container", children=[
+                           dcc.Dropdown(
+                               options=[
+                                {'label': 'Longitud del Pico',
+                                    'value': 'culmen_length_mm'},
+                                {'label': 'Ancho del Pico',
+                                    'value': 'culmen_depth_mm'},
+                                {'label': 'longitud de las Aletas',
+                                    'value': 'flipper_length_mm'},
+                                {'label': 'Masa Corporal', 'value': 'body_mass_g'}
+                                ], value=penguins.columns[2], id='dropdown-x'),
+                           dcc.Dropdown(
+                               options=[
+                                   {'label': 'Longitud del Pico',
+                                       'value': 'culmen_length_mm'},
+                                   {'label': 'Ancho del Pico',
+                                    'value': 'culmen_depth_mm'},
+                                   {'label': 'longitud de las Aletas',
+                                    'value': 'flipper_length_mm'},
+                                   {'label': 'Masa Corporal',
+                                       'value': 'body_mass_g'}
+                               ], value=penguins.columns[3], id='dropdown-y')
+
+                       ])
+                       ]
+             ),
+    html.Div(className="graph graph-xxl line-graph",
+             children=[dcc.Graph(id="lines-graph",
+                 figure=px.line(penguins, x="id", y="body_mass_g", color="species",
+                       title='custom tick labels', color_discrete_sequence=["orange", "purple", "green"])
+             ),
+                 html.Div(className="dropdowns-container", children=dcc.Dropdown(
+                     options=[
+                         {'label': 'Longitud del Pico',
+                          'value': 'culmen_length_mm'},
+                         {'label': 'Ancho del Pico',
+                          'value': 'culmen_depth_mm'},
+                         {'label': 'longitud de las Aletas',
+                          'value': 'flipper_length_mm'},
+                         {'label': 'Masa Corporal',
+                          'value': 'body_mass_g'}
+                     ], value=penguins.columns[2], id='dropdown-line')
+             )])
 ])
