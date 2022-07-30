@@ -1,56 +1,96 @@
 .prediction {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 100vh;
   font-size: 2rem;
 }
+
 .prediction .penguin-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   row-gap: 20px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   align-items: center;
   width: 40%;
 }
+
 .prediction .penguin-container #penguin-image {
   width: 90%;
   height: 90%;
   -o-object-fit: cover;
      object-fit: cover;
 }
+
 .prediction .penguin-container #penguin-title {
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
 }
+
 .prediction .sliders-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 60%;
 }
+
 .prediction .sliders-container .label {
   margin: 20px 0 10px;
   font-weight: bold;
   width: 80%;
 }
+
 .prediction .sliders-container .range-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 80%;
 }
+
 .prediction .sliders-container .range-wrapper .tag {
   margin: 0 10px;
 }
+
 .prediction .sliders-container .range-wrapper input {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
+
 .prediction .sliders-container .gender {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 60px;
 }
+
 .prediction .sliders-container .gender .female-label,
 .prediction .sliders-container .gender .male-label {
   height: 100%;
@@ -59,33 +99,46 @@
   font-size: 3rem;
   cursor: pointer;
 }
+
 .prediction .sliders-container .gender .female-label {
   border: solid 4px #76a3fc;
   border-right: none;
   border-radius: 8px 0 0 8px;
 }
+
 .prediction .sliders-container .gender .female-label-active {
   background-color: #76a3fc;
   color: white;
 }
+
 .prediction .sliders-container .gender .male-label {
   border: solid 4px #76a3fc;
   border-left: none;
   border-radius: 0 8px 8px 0;
 }
+
 .prediction .sliders-container .gender .male-label-active {
   background-color: #76a3fc;
   color: white;
 }
+
 .prediction .sliders-container .gender input {
   display: none;
 }
+
 .prediction .sliders-container .island {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 60px;
 }
+
 .prediction .sliders-container .island .torgersen-label,
 .prediction .sliders-container .island .dream-label,
 .prediction .sliders-container .island .biscoe-label {
@@ -95,36 +148,44 @@
   font-size: 3rem;
   cursor: pointer;
 }
+
 .prediction .sliders-container .island .torgersen-label {
   border: solid 4px #76a3fc;
   border-right: none;
   border-radius: 8px 0 0 8px;
 }
+
 .prediction .sliders-container .island .torgersen-label-active {
   background-color: #76a3fc;
   color: white;
 }
+
 .prediction .sliders-container .island .dream-label {
   border: solid 4px #76a3fc;
   border-left: none;
   border-right: none;
 }
+
 .prediction .sliders-container .island .dream-label-active {
   background-color: #76a3fc;
   color: white;
 }
+
 .prediction .sliders-container .island .biscoe-label {
   border: solid 4px #76a3fc;
   border-left: none;
   border-radius: 0 8px 8px 0;
 }
+
 .prediction .sliders-container .island .biscoe-label-active {
   background-color: #76a3fc;
   color: white;
 }
+
 .prediction .sliders-container .island input {
   display: none;
 }
+
 .prediction .sliders-container #predict-button {
   margin: 20px;
   text-align: center;
@@ -138,7 +199,10 @@
   color: white;
   cursor: pointer;
 }
+
 .prediction .sliders-container #predict-button:hover {
   background-color: #4481fb;
+  -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
-}/*# sourceMappingURL=prediction.css.map */
+}
+/*# sourceMappingURL=prediction.css.map */
