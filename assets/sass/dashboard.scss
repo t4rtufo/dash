@@ -3,14 +3,49 @@
   padding: 15px 40px;
   gap: 15px;
   grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: repeat(3, 1fr);
-  height: 100vh;
+  grid-auto-rows: calc((100vh / 2) - 20px);
+
   font-size: 2rem;
   background: #eeeeee;
 
   .graph {
+    min-width: 240px;
     background-color: white;
     border-radius: 16px;
+    overflow: hidden;
+
+    .dash-graph {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .penguins-amount {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .number {
+      font-size: 7rem;
+      font-weight: bold;
+    }
+    .title {
+      font-size: 3rem;
+    }
+  }
+
+  .species-graph {
+    position: relative;
+    display: flex;
+    align-items: center;
+    .ratio-label {
+      position: absolute;
+      bottom: 20px;
+      font-size: 3rem;
+      font-weight: bold;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
   .graph-md {
     grid-column: span 2 / auto;

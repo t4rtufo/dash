@@ -13,7 +13,6 @@ from sklearn.neighbors import KNeighborsClassifier
 
 from pages import prediction, dashboard, router
 
-# KNN prediction
 # Recolección
 df = pd.read_csv("./data/penguins_size.csv")
 
@@ -160,6 +159,8 @@ def update_penguin(culmen_length, culmen_depth, flipper, mass, gender, island, n
 
     species = predict(new_penguin)
     return f"../assets/img/{species}.png", species
+
+# Dashboard
 
 
 # Run the app on localhost:8050

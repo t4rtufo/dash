@@ -5,15 +5,66 @@
   gap: 15px;
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: repeat(3, 1fr);
-  height: 100vh;
+  grid-auto-rows: calc((100vh / 2) - 20px);
   font-size: 2rem;
   background: #eeeeee;
 }
 
 .dashboard .graph {
+  min-width: 240px;
   background-color: white;
   border-radius: 16px;
+  overflow: hidden;
+}
+
+.dashboard .graph .dash-graph {
+  width: 100%;
+  height: 100%;
+}
+
+.dashboard .penguins-amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard .penguins-amount .number {
+  font-size: 7rem;
+  font-weight: bold;
+}
+
+.dashboard .penguins-amount .title {
+  font-size: 3rem;
+}
+
+.dashboard .species-graph {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard .species-graph .ratio-label {
+  position: absolute;
+  bottom: 20px;
+  font-size: 3rem;
+  font-weight: bold;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .dashboard .graph-md {
